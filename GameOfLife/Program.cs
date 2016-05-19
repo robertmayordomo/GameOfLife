@@ -1,4 +1,5 @@
 ﻿using System;
+using GameOfLife.GameModels;
 using GameOfLife.Utilities;
 
 namespace GameOfLife
@@ -9,7 +10,7 @@ namespace GameOfLife
 
         private static void Main(string[] args)
         {
-            var gameOfLifeEmulator = new Life(10, LifeStartingShapes.Toad);
+            var gameOfLifeEmulator = new Life(10, LifeStartingShapes.Glider);
 
             ConsoleGridWriter.Write(gameOfLifeEmulator.Grid);
 

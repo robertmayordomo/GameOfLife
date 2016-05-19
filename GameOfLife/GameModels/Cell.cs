@@ -1,7 +1,7 @@
 using System;
 using System.Diagnostics;
 
-namespace GameOfLife
+namespace GameOfLife.GameModels
 {
     [DebuggerDisplay("x={X},y={Y}")]
     public class Cell : IEquatable<Cell>

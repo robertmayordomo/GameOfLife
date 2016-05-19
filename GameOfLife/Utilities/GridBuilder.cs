@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
+using GameOfLife.GameModels;
 
-namespace GameOfLife
+namespace GameOfLife.Utilities
 {
     internal static class GridBuilder
     {

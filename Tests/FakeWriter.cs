@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using GameOfLife;
+using GameOfLife.GameModels;
 using GameOfLife.Utilities;
 
 namespace Tests

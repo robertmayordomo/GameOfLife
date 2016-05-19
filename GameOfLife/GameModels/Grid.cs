@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
+using GameOfLife.Utilities;
 
-namespace GameOfLife
+namespace GameOfLife.GameModels
 {
     public sealed class Grid
     {
