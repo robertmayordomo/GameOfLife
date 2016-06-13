@@ -36,7 +36,7 @@ namespace Tests
             var sut = new Life(size, cells);
 
             //assert
-            CollectionAssert.AreEquivalent(sut.Grid.Cells, cells);
+            CollectionAssert.AreEquivalent(sut.Grid.Cells.Where(a => a.IsAlive), cells);
         }
 
         [Test]

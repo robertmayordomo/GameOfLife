@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using GameOfLife.GameModels;
 using GameOfLife.Utilities;
@@ -46,7 +48,22 @@ namespace GameOfLife
                 }
             }
 
-            Grid = new Grid(Grid.Size, nextGeneration);
+            var newGridSize = GetNewGridSize(nextGeneration);
+
+            Grid = new Grid(Math.Max(newGridSize, Grid.Size), nextGeneration);
+        }
+
+        private static int GetNewGridSize(IReadOnlyCollection<Cell> nextGeneration)
+        {
+            if (!nextGeneration.Any())
+                return 0;
+
+            var min = Math.Min(nextGeneration.Min(a => a.X), nextGeneration.Min(a => a.Y));
+            var max = Math.Max(nextGeneration.Max(a => a.X), nextGeneration.Max(a => a.Y));
+
+            var minDistance = Math.Abs(0 - min);
+            var newGridSize = minDistance > max ? min : max;
+            return newGridSize+2;
         }
     }
 }
